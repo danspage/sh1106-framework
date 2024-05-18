@@ -1,0 +1,12 @@
+{
+    "happy-face": [0,0,9,9],
+    "sad-face": [10,0,9,9],
+    "thumbs-up": [20,0,16,19],
+    "thumbs-down": [37,0,16,19],
+    "weather-sun": [0,20,11,11],
+    "weather-rain": [12,20,13,11],
+    "weather-storm": [16,20,13,11],
+    "weather-snow": [20,40,13,11],
+    "weather-partly-cloudy": [54,20,18,11],
+    "weather-cloudy": [73,20,17,11]
+}
