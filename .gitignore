@@ -1,0 +1,4 @@
+sh1106_framework.egg-info/
+dist/
+pyproject.toml
+*.pyc
