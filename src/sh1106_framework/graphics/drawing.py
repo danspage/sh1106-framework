@@ -318,6 +318,7 @@ class Drawing:
         """
         
         image_pixels = Images._images[image]
+        image_pixels = image_pixels[1:]
     
         if centered_horizontal:
             offset_x = int((-image_pixels[0][0]*scale) / 2)
