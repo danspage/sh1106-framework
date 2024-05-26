@@ -3,8 +3,8 @@ from ping import PingPage
 from pong import PongPage
 
 def __init():
-    SH1106Framework.register_font("default", "assets/default_font.json")
-    SH1106Framework.register_images("assets/icons.json")
+    SH1106Framework.register_font("default", "assets/default-font.json")
+    SH1106Framework.register_images("assets/example-images.json")
     
     SH1106Framework.register_routes(
         initial_route="ping",

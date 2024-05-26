@@ -24,6 +24,7 @@ class StateManager:
         # Initializes the default route afterwards
         StateManager.__states[StateManager.__current_state].initialized = True
         StateManager.__states[StateManager.__current_state].init()
+        StateManager.__states[StateManager.__current_state].enter()
         
     @staticmethod
     def set_route(route_name):

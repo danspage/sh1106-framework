@@ -11,12 +11,10 @@ class PingPage(State):
 
     def enter(self):
         self.time_of_start = time.time()
-        print("ENTERING THE PING STATE")
 
     def update(self, dt):
-        # if time.time() - self.time_of_start > 1:
-        #     self.state_manager.set_route("pong")
-        pass
+        if time.time() - self.time_of_start > 1:
+            self.state_manager.set_route("pong")
 
     def render(self):
         Drawing.draw_image("weather-rain", 0, 0)
