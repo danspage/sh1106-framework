@@ -15,7 +15,7 @@ exclude = [
 
 [project]
 name = "sh1106_framework"
-version = "0.0.16"
+version = "0.0.17"
 authors = [{ name = "Dan Convey" }]
 license = { text = "Apache License 2.0" }
 description = "A state manager, graphics, image, and custom font drawing package for the SH1106 OLED screen based on the luma.oled package. It works with Raspberry Pi and other Linux-based single-board computers."
@@ -36,7 +36,7 @@ Issues = "https://github.com/danspage/sh1106-framework/issues"
 
 [tool.hatch.metadata]
 name = "sh1106_framework"
-version = "0.0.16"
+version = "0.0.17"
 description = "A state manager, graphics, image, and custom font drawing package for the SH1106 OLED screen based on the luma.oled package. It works with Raspberry Pi and other Linux-based single-board computers."
 
 [project.scripts]
