@@ -73,7 +73,7 @@ The font utility works the exact same as the image utility, except with the `sh1
 
 ### Basic Usage
 
-Here is a simple ping-pong page that displays an image, draws some text, and switches between the two pages every second.
+Here is a simple ping-pong page that displays an image, draws some text, and switches between the two pages every second. It can be found in the tests folder of the package.
 
 <u>ping-pong.py</u>
 
@@ -83,18 +83,17 @@ from ping import PingPage
 from pong import PongPage
 
 def __init():
-    SH1106Framework.register_font("default", "default_font.json")
-    SH1106Framework.register_images("icons.json")
+    SH1106Framework.register_font("default", "assets/default-font.json")
+    SH1106Framework.register_images("assets/example-images.json")
     
     SH1106Framework.register_routes(
-        default_route="splash",
+        initial_route="ping",
         routes={
             "ping": PingPage(StateManager),
-          	"pong": PongPage(StateManager)
+            "pong": PongPage(StateManager),
         }
     )
     
-    # Use the I2C port and address of the display
     SH1106Framework.begin(port=1, address=0x3C)
     pass
     
@@ -118,9 +117,6 @@ class PingPage(State):
 
     def enter(self):
         self.time_of_start = time.time()
-
-    def handle_input(self, channel, message):
-        pass
 
     def update(self, dt):
         if time.time() - self.time_of_start > 1:
@@ -147,9 +143,6 @@ class PongPage(State):
 
     def enter(self):
         self.time_of_start = time.time()
-
-    def handle_input(self, channel, message):
-        pass
 
     def update(self, dt):
         if time.time() - self.time_of_start > 1:
