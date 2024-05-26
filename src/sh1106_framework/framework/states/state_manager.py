@@ -1,5 +1,5 @@
-from graphics.drawing import Drawing
-from framework.states.state import State
+from ...graphics.drawing import Drawing
+from .state import State
 
 class StateManager:
     """
@@ -26,7 +26,7 @@ class StateManager:
         StateManager.__states[StateManager.__current_state].init()
         
     @staticmethod
-    def set_state(route_name):
+    def set_route(route_name):
         """
         Sets the current state to the given route name.
         
@@ -51,7 +51,7 @@ class StateManager:
         Sets the current state to the previous state. Nothing happens if there is
         no previous state.
         """
-        StateManager.set_state(StateManager.__previous_state)
+        StateManager.set_route(StateManager.__previous_state)
     
     @staticmethod
     def _update(dt):

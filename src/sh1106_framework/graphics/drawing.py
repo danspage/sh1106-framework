@@ -4,8 +4,8 @@ from luma.oled.device import sh1106
 from PIL import Image
 import time
 
-from graphics.fonts import Fonts
-from graphics.images import Images
+from .fonts import Fonts
+from .images import Images
 
 class Drawing:
     """
@@ -317,7 +317,25 @@ class Drawing:
             Whether or not the image should be centered vertically.
         """
         
-        Images._draw_image(image, x, y, color, scale, centered_horizontal, centered_vertical)
+        image_pixels = Images._images[image]
+    
+        if centered_horizontal:
+            offset_x = int((-image_pixels[0][0]*scale) / 2)
+        else:
+            offset_x = 0
+            
+        if centered_vertical:
+            offset_y = int((-image_pixels[0][1]*scale) / 2)
+        else:
+            offset_y = 0
+        
+        for y1 in range(len(image_pixels)):
+            for x1 in range(len(image_pixels[0])):
+                if image_pixels[y1][x1] == 1:
+                    if scale == 1:
+                        Drawing.set_pixel(x + x1 + offset_x, y + y1 + offset_y, color)
+                    else:
+                        Drawing.draw_rect(int(x + x1 * scale + offset_x), int(y + y1 * scale + offset_y), scale, scale, color)
     
     @staticmethod
     def _render() -> None:

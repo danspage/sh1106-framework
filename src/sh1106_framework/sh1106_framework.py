@@ -1,8 +1,8 @@
-from graphics.drawing import Drawing
-from graphics.fonts import Fonts
-from graphics.images import Images
-from framework.constants import Constants
-from framework.states.state_manager import StateManager, State
+from .graphics.drawing import Drawing
+from .graphics.fonts import Fonts
+from .graphics.images import Images
+from .framework.constants import Constants
+from .framework.states.state_manager import StateManager, State
 
 from abc import ABC
 import time
