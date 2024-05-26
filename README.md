@@ -60,7 +60,7 @@ If an entry looks like this: `"smiley-face": [10,10,20,15]` the framework will r
 
 To generate an output JSON file for the images, use the following terminal command:
 ```bash
-sh1006_terminal_generator -i/--image <path to reference image> -j/--json <path to reference JSON> -o/--output <path to output file>
+sh1006_image_generator -i/--image <path to reference image> -j/--json <path to reference JSON> -o/--output <path to output file>
 ```
 
 Then you'll use the output JSON file for initializing images when the framework is loading.
